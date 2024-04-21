@@ -1,0 +1,2 @@
+rootProject.name='Bottom Navigation(androidX)'
+include ':app'

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+.all-content{
+    background: #f7f5f2;
+}
+
+#note{
+    width: 100%;
+    height: 100%;
+}
+
+#note .container{
+    text-align: justify;
+    padding-top: 20px;
+}
+
+#note .card{
+    border-radius: 10px;
+}
+
+#note .card img{
+    border-radius: 10px;
+}
+
+.column {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+    
+.row-table:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#note-btn{
+    width: 200px;
+    height: 36px;
+    background: transparent;
+    border: 2px solid #006400;
+    color: #006400;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+#note-btn:hover{
+    background-color: #006400;
+    color: white;
+}
+
+@media screen and (max-width:982px){
+    #note p{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width:766px){
+    #note p{
+        font-size: 15px;
+    }
+    #note{
+        height: 120vh;
+    }
+}
+
+#top-cards{
+    width: 100%;
+    background: #f7f5f2;
+}
+
+.heading2{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.heading2 span{
+    color: #b2744c;
+}
+
+#top-cards .container{
+    margin-top: 30px;
+}
+
+#top-cards .card{
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#top-cards .card img{
+    border-radius: 10px;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}

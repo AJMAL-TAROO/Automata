@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="5"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffff"
+    android:padding="10dp"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.1"
+        android:background="@drawable/lettuce1"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/edit_corners1"
+            android:layout_marginBottom="15dp"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="Temperature status:"/>
+                <TextView
+                    android:id="@+id/temperatureNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" Good"
+                    />
+                <ImageView
+                    android:id="@+id/temperatureImg"
+                    android:layout_gravity="end"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/greentick"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="Action to take:"/>
+                <TextView
+                    android:id="@+id/temperatureSuggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#2AFFFFFF"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" None"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/edit_corners1"
+            android:layout_marginBottom="15dp"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="Humidity status:"/>
+                <TextView
+                    android:id="@+id/humidityNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" Low"/>
+                <ImageView
+                    android:id="@+id/humidityImg"
+                    android:layout_gravity="end"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/warning"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="Action to take:"/>
+                <TextView
+                    android:id="@+id/humiditySuggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" Turn on humidifier"
+                    android:background="#2AFFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/edit_corners1"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="TDS status:"/>
+                <TextView
+                    android:id="@+id/tdsNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" Good"/>
+                <ImageView
+                    android:id="@+id/tdsImg"
+                    android:layout_gravity="end"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/greentick"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="Action to take:"/>
+                <TextView
+                    android:id="@+id/tdsSuggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#2AFFFFFF"
+                    android:textSize="16sp"
+                    android:textColor="#062AF4"
+                    android:textStyle="bold"
+                    android:text=" None"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

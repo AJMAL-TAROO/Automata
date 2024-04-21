@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "736607395433",
+    "firebase_url": "https://smartplant-2802c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartplant-2802c",
+    "storage_bucket": "smartplant-2802c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736607395433:android:fba960753a3e9eb0754cf8",
+        "android_client_info": {
+          "package_name": "com.freedomedition.automata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736607395433-8j9lbj8osoop1j8c4mmdtr7jub1si1eu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2tNIRIdM0zqe2SgBhyKIWzx_W6jDc9kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736607395433-8j9lbj8osoop1j8c4mmdtr7jub1si1eu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
