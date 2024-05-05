@@ -2,14 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 32
-
-
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.freedomedition.automata"
         minSdkVersion 28
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -56,4 +54,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-database:19.3.1'
     implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+    implementation "com.github.bumptech.glide:glide:4.9.0"
 }
