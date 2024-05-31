@@ -2,6 +2,6 @@
     <string name="app_name">Smart Plant</string>
     <string name="title_home">new</string>
     <string name="title_dashboard">Suggestion</string>
-    <string name="title_notifications">Streaming</string>
+    <string name="title_module">Modules</string>
     <string name="title_new">Home</string>
 </resources>
