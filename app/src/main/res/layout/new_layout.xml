@@ -23,13 +23,14 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:background="@drawable/edit_corners2">
+
             <ImageView
                 android:id="@+id/plantImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:radius="10dp"
                 android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:radius="10dp"/>
+                android:scaleY="1.5" />
 
         </LinearLayout>
 
