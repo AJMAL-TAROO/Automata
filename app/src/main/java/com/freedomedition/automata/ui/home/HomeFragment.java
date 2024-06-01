@@ -1,48 +1,40 @@
 package com.freedomedition.automata.ui.home;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
-
 import com.freedomedition.automata.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnMapReadyCallback {
+    private GoogleMap mMap;
 
-    private HomeViewModel homeViewModel;
-
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-
+        // Get the SupportMapFragment from the inflated layout
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
         return root;
     }
 
+    // This method is called when the map is ready to be used.
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
-
+        // Add a marker at the specified location
+        LatLng location = new LatLng(-20.25578199000835, 57.481395786625434);
+        mMap.addMarker(new MarkerOptions().position(location).title("Marker at specified coordinates"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+    }
 }
