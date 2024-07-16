@@ -16,9 +16,9 @@
         android:icon="@drawable/module"
         android:title="@string/title_module" />
 
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_notes"
-        android:title="@string/title_home" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_home"-->
+<!--        android:icon="@drawable/ic_notes"-->
+<!--        android:title="@string/title_home" />-->
 
 </menu>
