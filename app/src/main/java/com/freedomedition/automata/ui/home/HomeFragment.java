@@ -33,8 +33,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker at the specified location
-        LatLng location = new LatLng(-20.25578199000835, 57.481395786625434);
-        mMap.addMarker(new MarkerOptions().position(location).title("Marker at specified coordinates"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+        LatLng location1 = new LatLng(-20.25578199000835, 57.481395786625434);
+        mMap.addMarker(new MarkerOptions().position(location1).title("Transcom"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location1));
+
+        LatLng location2 = new LatLng(-20.247535000738907, 57.4798622231206);
+        mMap.addMarker(new MarkerOptions().position(location2).title("School of Electronics"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location2));
+
     }
 }

@@ -128,12 +128,25 @@ public class NotificationsFragment extends Fragment implements OnMapReadyCallbac
             }
             if(string_tds.equals("OFF")){
                 builder.setNegativeButton("Take Action",(dialog, which) -> {
+                    getTDSAction();
                 });
             }
             builder.create().show();
         });
 
         return root;
+    }
+
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        // Add a marker at the specified location
+        LatLng location1 = new LatLng(-20.25578199000835, 57.481395786625434);
+        mMap.addMarker(new MarkerOptions().position(location1).title("Transcom"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location1));
+
+        LatLng location2 = new LatLng(-20.247535000738907, 57.4798622231206);
+        mMap.addMarker(new MarkerOptions().position(location2).title("School of Electronics"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location2));
     }
 
     public void getDHTAction(){
@@ -150,27 +163,12 @@ public class NotificationsFragment extends Fragment implements OnMapReadyCallbac
             View view = getLayoutInflater().inflate(R.layout.popup_donation, null);
             dialog1.setView(view);
             dialog1.setCancelable(true);
-
-
             // Get the SupportMapFragment from the inflated layout
             SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
-
             dialog1.show();
-
-//            listView = view.findViewById(R.id.listView);
-//            labelDonation = view.findViewById(R.id.labelDonation);
         });
         builder.create().show();
-    }
-
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        // Add a marker at the specified location
-        LatLng location = new LatLng(-20.25578199000835, 57.481395786625434);
-        mMap.addMarker(new MarkerOptions().position(location).title("Marker at specified coordinates"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
     }
     public void checkDHTConnection(){
         String connectionDetails;
@@ -181,8 +179,39 @@ public class NotificationsFragment extends Fragment implements OnMapReadyCallbac
         builder.setMessage(connectionDetails);
         builder.setPositiveButton("OK", (dialog, which) -> {
         });
-//        builder.setNegativeButton("Buy locally",(dialog, which) -> {
-//        });
+        builder.create().show();
+    }
+
+    public void getTDSAction(){
+        String actions_tds = "You can either: \n1. Crosscheck the wiring connection provided\n2. Buy a new component at the shops provided";
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setCancelable(true);
+        builder.setTitle("Actions that can be taken");
+        builder.setMessage(actions_tds);
+        builder.setPositiveButton("Check wiring", (dialog, which) -> {
+            checkTDSConnection();
+        });
+        builder.setNegativeButton("Buy locally",(dialog, which) -> {
+            final CustomDialog dialog1 = new CustomDialog(getContext());
+            View view = getLayoutInflater().inflate(R.layout.popup_donation, null);
+            dialog1.setView(view);
+            dialog1.setCancelable(true);
+            // Get the SupportMapFragment from the inflated layout
+            SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+            dialog1.show();
+        });
+        builder.create().show();
+    }
+    public void checkTDSConnection(){
+        String connectionDetails;
+        connectionDetails = "1. Connect GND from TDS to GND in NodeMCU\n2. Connect VCC from TDS to 3V in NodeMCU\n 3. Connect Data from TDS to A0 in NodeMCU";
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setCancelable(true);
+        builder.setTitle("TDS wiring connection");
+        builder.setMessage(connectionDetails);
+        builder.setPositiveButton("OK", (dialog, which) -> {
+        });
         builder.create().show();
     }
 
